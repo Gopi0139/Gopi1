@@ -1,0 +1,100 @@
+package qedge;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class BookMyShow {
+
+	public static void main(String[] args) throws Throwable {
+
+		System.setProperty("webdriver.chrome.driver","D:\\Selenium\\chromedriver_win32\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.navigate().to("https://in.bookmyshow.com/");
+		driver.manage().window().maximize();
+		Thread.sleep(3000);
+
+		// enter location
+		driver.findElement(By.xpath("(//img[@alt='HYD'])[1]")).click();
+		Thread.sleep(3000);
+
+		// select movie
+		driver.findElement(By.xpath("//img[@alt='Kantara (Telugu)']")).click();
+		Thread.sleep(3000);
+
+		//select book tickets
+		driver.findElement(By.xpath("//div[@class='sc-qswwm9-8 jayiEd']//span[contains(text(),'Book tickets')]")).click();
+		Thread.sleep(3000);
+
+		//incase alert is showing click on not know or ok
+		driver.findElement(By.xpath("//*[@id=\"wzrk-confirm\"]")).click();
+		Thread.sleep(5000);
+		
+		//select dates
+		driver.findElement(By.xpath("//*[@id=\"showDates\"]/div/div/li[2]/a")).click( ); 
+		Thread.sleep(3000);
+
+		//select show time
+		driver.findElement(By.xpath("//li[@data-id='MEPY']//a[@class='showtime-pill']")).click();
+		Thread.sleep(3000);
+
+		// select i accepted
+		driver.findElement(By.xpath("//*[@id=\"btnPopupAccept\"]")).click(); 
+		Thread.sleep(3000);
+
+		//select number of members 
+		driver.findElement(By.xpath("//*[@id=\"pop_1\"]")).click();
+		Thread.sleep(3000);
+
+		//selest seats
+		driver.findElement(By.xpath("//*[@id=\"proceed-Qty\"]")).click(); 
+		Thread.sleep(3000);
+
+		//select seat numbers
+		driver.findElement(By.xpath("//*[@id=\"A_7_16\"]/a")).click();
+		Thread.sleep(3000);
+
+		// select pay mode
+		driver.findElement(By.xpath("//*[@id=\"btmcntbook\"]")).click();
+		Thread.sleep(3000);
+
+		// select proceed
+		driver.findElement(By.xpath("//*[@id=\"prePay\"]")).click();
+		Thread.sleep(3000);
+
+		//select gmail adreess
+		driver.findElement(By.xpath("//*[@id=\"txtEmail\"]")).sendKeys("gopinadh373@gmail.com");
+		Thread.sleep(3000);
+
+		// select mobile number
+		driver.findElement(By.xpath("//*[@id=\"txtMobile\"]")).sendKeys("7893974387");
+		Thread.sleep(3000);
+
+		//select continue button
+		driver.findElement(By.xpath("//*[@id=\"dContinueContactSec\"]/a")).click();
+		Thread.sleep(3000);
+
+		// select card number
+		driver.findElement(By.xpath("//*[@id=\"txtCardNo\"]")).sendKeys("6074310287867130");
+		Thread.sleep(3000);
+
+		//select name on the card
+		driver.findElement(By.xpath("//*[@id=\"txtCardName\"]")).sendKeys("M GOPINADH");
+		Thread.sleep(3000);
+
+		//select expiry month 
+		driver.findElement(By.xpath("//*[@id=\"txtExpMonth\"]")).sendKeys("07");
+		Thread.sleep(3000);
+
+		//select expiry year
+		driver.findElement(By.xpath("//*[@id=\"txtExpYear\"]")).sendKeys("25");
+		Thread.sleep(3000);
+
+		// select cvv
+		driver.findElement(By.xpath("//*[@id=\"txtCVV\"]")).sendKeys("786");
+		Thread.sleep(3000);
+
+		// select make payment mode
+		driver.findElement(By.xpath("//*[@id=\"makeCardPayment\"]")).click();
+		Thread.sleep(3000);
